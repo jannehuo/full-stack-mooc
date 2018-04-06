@@ -5,12 +5,20 @@ const Otsikko = ({kurssi}) => (
   <h1>{kurssi}</h1>
 )
 
-const Sisalto = ({osa,tehtavia}) => (
-  <p>{osa} {tehtavia}</p>
+const Sisalto = ({osaList,tehtaviaList}) => (
+  <div>
+    <Osa osa={osaList[0]} tehtavia={tehtaviaList[0]} />
+    <Osa osa={osaList[1]} tehtavia={tehtaviaList[1]} />
+    <Osa osa={osaList[2]} tehtavia={tehtaviaList[2]} />
+  </div>
 )
 
 const Yhteensa = ({tehtavatYht}) => (
   <p>yhteensä {tehtavatYht} tehtävää</p>
+)
+
+const Osa = ({osa,tehtavia}) => (
+  <p>{osa} {tehtavia}</p>
 )
 
 const App = () => {
@@ -25,9 +33,7 @@ const App = () => {
   return (
     <div>
       <Otsikko kurssi={kurssi} />
-      <Sisalto osa={osa1} tehtavia={tehtavia1} />
-      <Sisalto osa={osa2} tehtavia={tehtavia2} />
-      <Sisalto osa={osa3} tehtavia={tehtavia3} />
+      <Sisalto osaList={[osa1,osa2,osa3]} tehtaviaList={[tehtavia1,tehtavia2,tehtavia3]} />
       <Yhteensa tehtavatYht={tehtavia1 + tehtavia2 + tehtavia3}/>
     </div>
   )
