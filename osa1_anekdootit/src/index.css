@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  color: #333333;
+  font-family: 'Futura', sans-serif;
+}
+
+h1,h2,p {
+  margin: 0;
+  line-height: 1;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+.app-container {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-buttons {
+  margin: 20px 0;
+}
+
+.button {
+  border: none;
+  width: calc(33% - 10px);
+  margin: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 900;
+  display: inline-block;
+  color: white;
+}
+
+.button.positive {
+  background-color: #2d822e;
+}
+
+.button.neutral {
+  background-color: #2e659b;
+}
+
+.button.negative {
+  background-color: #f93b3b;
+}

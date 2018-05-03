@@ -37,8 +37,7 @@ const Statistics = ({values}) => {
 const Statistic = ({label,value}) => {
   return (
     <tr>
-      <td>{label}</td>
-      <td>{value}</td>
+      <td>{label}</td><td>{value}</td>
     </tr>
   )
 }
