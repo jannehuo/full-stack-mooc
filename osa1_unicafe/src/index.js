@@ -15,13 +15,15 @@ const Statistics = ({values}) => {
     <div className='app-stats'>
       <h2>Statistiikka</h2>
       {allReviews > 0 &&
-        <div>
-        <Statistic label="Positiivinen" value={values.positive} />
-        <Statistic label="Neutraali" value={values.neutral} />
-        <Statistic label="Negatiivinen" value={values.negative} />
-        <Statistic label="Keskiarvo" value={isNaN(average) ? 0 : average} />
-        <Statistic label="Positiivisia" value={isNaN(positives) ? 0 + '%' : positives + '%'} />
-        </div>
+        <table>
+          <tbody>
+            <Statistic label="Positiivinen" value={values.positive} />
+            <Statistic label="Neutraali" value={values.neutral} />
+            <Statistic label="Negatiivinen" value={values.negative} />
+            <Statistic label="Keskiarvo" value={isNaN(average) ? 0 : average} />
+            <Statistic label="Positiivisia" value={isNaN(positives) ? 0 + '%' : positives + '%'} />
+          </tbody>
+        </table>
       }
       {allReviews === 0 &&
         <div>
@@ -34,7 +36,10 @@ const Statistics = ({values}) => {
 
 const Statistic = ({label,value}) => {
   return (
-    <p>{label}: {value}</p>
+    <tr>
+      <td>{label}</td>
+      <td>{value}</td>
+    </tr>
   )
 }
 
