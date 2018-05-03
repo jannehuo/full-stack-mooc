@@ -7,12 +7,18 @@ const Button = ({handleClick,content,buttonClass}) => (
 )
 
 const Stats = ({values}) => {
+  let allReviews = values.positive + values.neutral + values.negative;
+  let reviewsSum = values.positive + (values.negative * -1);
+  let average = Math.round((reviewsSum / allReviews) * 100) / 100;
+  let positives = Math.round((values.positive / allReviews) * 100);
   return (
     <div className='app-stats'>
       <h2>Statistiikka</h2>
       <p>Positiivinen: {values.positive}</p>
       <p>Neutraaali: {values.neutral}</p>
       <p>Negatiivinen: {values.negative}</p>
+      <p>Keskiarvo: {isNaN(average) ? 0 : average}</p>
+      <p>Positiivisia: {isNaN(positives) ? 0 : positives} %</p>
     </div>
   )
 }
