@@ -6,7 +6,7 @@ const Button = ({handleClick,content,buttonClass}) => (
   <button className={buttonClass} onClick={handleClick}>{content}</button>
 )
 
-const Stats = ({values}) => {
+const Statistics = ({values}) => {
   let allReviews = values.positive + values.neutral + values.negative;
   let reviewsSum = values.positive + (values.negative * -1);
   let average = Math.round((reviewsSum / allReviews) * 100) / 100;
@@ -14,12 +14,18 @@ const Stats = ({values}) => {
   return (
     <div className='app-stats'>
       <h2>Statistiikka</h2>
-      <p>Positiivinen: {values.positive}</p>
-      <p>Neutraaali: {values.neutral}</p>
-      <p>Negatiivinen: {values.negative}</p>
-      <p>Keskiarvo: {isNaN(average) ? 0 : average}</p>
-      <p>Positiivisia: {isNaN(positives) ? 0 : positives} %</p>
+      <Statistic label="Positiivinen" value={values.positive} />
+      <Statistic label="Neutraali" value={values.neutral} />
+      <Statistic label="Negatiivinen" value={values.negative} />
+      <Statistic label="Keskiarvo" value={isNaN(average) ? 0 : average} />
+      <Statistic label="Positiivisia" value={isNaN(positives) ? 0 + '%' : positives + '%'} />
     </div>
+  )
+}
+
+const Statistic = ({label,value}) => {
+  return (
+    <p>{label}: {value}</p>
   )
 }
 
@@ -63,12 +69,12 @@ class App extends React.Component {
         <div className='add-review'>
           <h2>Anna palautetta</h2>
           <div className='app-buttons'>
-          <Button handleClick={this.addReview(1)} content="Hyvä" buttonClass="button positive" />
-          <Button handleClick={this.addReview(0)} content="Neutraali"  buttonClass="button neutral" />
-          <Button handleClick={this.addReview(-1)} content="Huono"  buttonClass="button negative" />
+            <Button handleClick={this.addReview(1)} content="Hyvä" buttonClass="button positive" />
+            <Button handleClick={this.addReview(0)} content="Neutraali"  buttonClass="button neutral" />
+            <Button handleClick={this.addReview(-1)} content="Huono"  buttonClass="button negative" />
           </div>
         </div>
-        <Stats values={this.state}/>
+        <Statistics values={this.state}/>
       </div>
     )
   }
