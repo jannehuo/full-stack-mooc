@@ -4,9 +4,9 @@ const Filter = ({filterInput}) => {
   return (
     <div>
       <label>
-        <h2>Rajaa henkilöitä</h2>
+        <h2>Filter Countries</h2>
       </label>
-      <input placeholder='Etsi henkilöä' onChange={filterInput}/>
+      <input placeholder='Find country' onChange={filterInput}/>
     </div>
   )
 }
