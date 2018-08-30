@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const appUrls = {
-  persons:'http://localhost:3001/api/persons/'
+  persons:'/api/persons/'
 }
 
 const getAll = () => {
