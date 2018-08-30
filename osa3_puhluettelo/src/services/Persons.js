@@ -17,7 +17,7 @@ const update = (id, newObject) => {
 }
 
 const deletePerson = (id) => {
-  return Axios.delete(`${appUrls.persons}/${id}`)
+  return Axios.delete(`${appUrls.persons}${id}`)
 }
 
 export default { getAll, create, update, deletePerson }

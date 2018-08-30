@@ -5,7 +5,7 @@ const Success = ({show,message,color}) => {
   const additionalStyles = {
     backgroundColor:color
   }
-
+  
   return (
     <div className={notificationClass} style={additionalStyles}>
       {message}
